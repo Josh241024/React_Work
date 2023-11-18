@@ -1,0 +1,37 @@
+1.UseState Problem:
+App.js:
+import React from "react";
+import Lifecycle from "./components/Lifecycle";
+function App(){
+  return(
+    <div>
+      <Lifecycle/>
+    </div>
+  )
+}
+export default App
+
+Lifecycle.js:
+import React, { useState } from "react";
+
+const Lifecycle = () => {
+  const [resourcetype, setResourcetype] = useState("hi");
+
+  return (
+    <div>
+      <button onClick={() => setResourcetype("posts")}>Posts</button>
+      <button onClick={() => setResourcetype("users")}>Users</button>
+      <button onClick={() => setResourcetype("comments")}>Comments</button>
+      <h2>{resourcetype}</h2>
+    </div>
+  );
+}
+export default Lifecycle;
+
+ 
+OUTPUT:
+Users:
+ 
+
+Post:
+ 
