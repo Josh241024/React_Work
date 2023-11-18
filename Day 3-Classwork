@@ -1,0 +1,305 @@
+1.Forms Project with onClick:
+App.js:
+import React from 'react';
+import PassMessage from './PassMessage';
+import FailMessage from './FailMessage';
+class App extends React.Component {
+  render (){
+    return(
+      <div>
+        <PassMessage/>
+      </div>
+    )
+  }
+}
+export default App;
+
+
+PassMessage.js:
+import React from 'react';
+import './App.css';
+
+class PassMessage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      message: (
+        <div>
+          <form>
+            <label htmlFor="name"><h4>NAME:</h4></label>
+            <input type='text' id='name' placeholder='Enter your name' />
+
+            <label htmlFor="password"><h4>PASSWORD:</h4></label>
+            <input type='password' id='password' placeholder='Enter your password' />
+
+            <label htmlFor="age"><h4>AGE:</h4></label>
+            <input type='date' id='age' />
+
+            <label><h4>SELECT YOUR GENDER:</h4></label>
+            <input type='radio' name='gender' value='Male' /> Male
+            <input type='radio' name='gender' value='Female' /> Female
+            <br/>
+          </form>
+        </div>
+      ),
+    };
+  }
+
+  changeMessage() {
+    this.setState({
+      message: <img src='https://cdn.pixabay.com/photo/2016/03/31/14/37/check-mark-1292787_1280.png' width={100} height={100}/>,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <div>
+          {this.state.message}
+        </div>
+        <button type='submit' id='but' onClick={() => this.changeMessage()}>Submit</button>
+      </div>
+    );
+  }
+}
+
+export default PassMessage;
+
+
+App.css:
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* App.css */
+
+/* Define your styles here */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  text-align: center; /* Center content horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* Center content vertically */
+  color:inherit;
+  display: flex;
+}
+
+#but {
+  background-color: rgb(5, 13, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor:grab;
+  margin-top: 10px;
+  font-style: normal;
+}
+
+.logincontainer {
+  background-color: rgb(229, 233, 236);
+  width: max-content;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  color: black;
+  margin: 0 auto; /* Horizontally center within its parent container */
+}
+
+OUTPUT:
+ 
+
+
+
+2. State Button changing message:
+App.js:
+import React from 'react';
+import PassMessage from './PassMessage';
+class App extends React.Component {
+  render (){
+    return(
+      <PassMessage/>
+    );
+  }
+}
+export default App;
+
+
+PassMessage.js:
+import React from "react"
+class PassMessage extends React.Component{
+    constructor()
+    {
+        super()
+        this.state={
+            message:'Welcome User'
+        }
+    }
+    changeMessage()
+    {
+        this.setState({
+            message:'You are Subscribed Now'
+        });
+    }
+    render(){
+        return(
+            <div>
+                <h1>{this.state.message}</h1>
+                <button onClick={()=>this.changeMessage()}>Subscribe</button>
+            </div>
+        );
+    }
+}
+export default PassMessage
+
+OUTPUT:
+ 
+
+ 
+
+
+
+
+3. Tagging two .js files:
+App.js:
+import React from 'react';
+import PassMessage from './PassMessage';
+import FailMessage from './FailMessage';
+class App extends React.Component {
+  render (){
+    return(
+      <div> import React from 'react';
+import PassMessage from './PassMessage';
+import FailMessage from './FailMessage';
+class App extends React.Component {
+  render (){
+    return(
+      <div>
+        <PassMessage />
+        <FailMessage />
+      </div>
+    )
+  }
+}
+export default App;
+        <PassMessage />
+        <FailMessage />
+      </div>
+    )
+  } import React from 'react';
+import PassMessage from './PassMessage';
+import FailMessage from './FailMessage';
+class App extends React.Component {
+  render (){
+    return(
+      <div>
+        <PassMessage />
+        <FailMessage />
+      </div>
+    )
+  }
+}
+export default App;
+
+}
+export default App;
+
+PassMessage.js:
+import React from "react"
+class PassMessage extends React.Component{
+    render(){
+        return <h1>You have passed the test!!</h1>
+    }
+}
+export default PassMessage
+
+FailMessage.js:
+import React from "react"
+class FailMessage extends React.Component{
+    render(){
+        return <h1>You have failed the test!!</h1>
+    }
+}
+export default FailMessage
+
+OUTPUT:
+
+
+ 
+
+
+
+4. App.js
+import React from 'react'
+import PassMessage from './PassMessage'
+class App extends React.Component{
+  render()
+  {
+    return(
+      <PassMessage/>
+    );
+  }
+}
+export default App;
+
+PassMessage.js
+import React from 'react'
+import PassMessage from './PassMessage'
+class Pass extends React.Component{
+  render()
+  {
+    return(
+      <h1>You have Passed</h1>
+    );
+  }
+}
+export default Pass 
+
+ 
+
+
+
+
+
