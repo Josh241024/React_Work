@@ -1,114 +1,53 @@
-App.js
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div>
-      <form>
-        <label htmlFor="name">
-          <h4>NAME:</h4>
-        </label>
-        <input type='text' id='name' placeholder='Enter your name' />
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      msg: 'HamNEO',
+    };
+    console.log('Constructor Called!');
+  }
 
-        <label htmlFor="password">
-          <h4>PASSWORD:</h4>
-        </label>
-        <input type='password' id='password' placeholder='Enter your password' />
+  componentWillMount() {
+    console.log('Component Will MOUNT!');
+  }
 
-        <label htmlFor="age">
-          <h4>AGE:</h4>
-        </label>
-        <input type='date' id='age' />
+  componentDidMount() {
+    console.log('Component Did MOUNT!');
+  }
 
-        <div>
-          <h4>SELECT YOUR GENDER:</h4>
-          <input type='radio' name='gender' value='Male' /> Male
-          <input type='radio' name='gender' value='Female' /> Female
-        </div>
-        <br />
+  componentWillReceiveProps(newProps) {
+    console.log('Component Will Receive Props!');
+  }
 
-        <button type='submit' id='but'>Submit</button>
-      </form>
-    </div>
-  );
+  componentWillUpdate(nextProps, nextState) {
+    console.log('Component Will UPDATE!');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('Component Did UPDATE!');
+  }
+
+  componentWillUnmount() {
+    console.log('Component Will UNMOUNT!');
+  }
+
+  handleButtonClick = () => {
+    this.setState({
+      msg: 'Welcome to React Joshua',
+    });
+  };
+
+  render() {
+    console.log('Render Called!');
+    return (
+      <div>
+        <h1>{this.state.msg}</h1>
+        <button onClick={this.handleButtonClick}>Change Message</button>
+      </div>
+    );
+  }
 }
+
 export default App;
-
-
-App.css
-/* Remove the period before the class name */
-App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-/* Add @keyframes App-logo-spin definition here */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(255, 38, 89);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  color: inherit; /* Corrected 'inherit' */
-}
-
-#but {
-  background-color: rgb(5, 13, 255);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: grab; /* Corrected 'grab' */
-  margin-top: 10px;
-  font-style: normal; /* Remove this line if unnecessary */
-}
-
-.logincontainer {
-  background-color: rgb(229, 233, 236);
-  width: max-content; /* Corrected 'max-content' */
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  margin: 0 auto;
-}
-
-
-
