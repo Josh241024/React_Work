@@ -1,0 +1,42 @@
+1.Header and Footer:
+App.js:
+
+import React from "react";
+import StyledButton from "./components/styledbutton";
+import './App.css'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+function App()
+{
+  return(
+    <div>
+     <Header/>
+     <Footer/>
+    </div>
+  )
+}
+export default App
+
+Header.js:
+import React from 'react'
+const Header = () => {
+  return (
+    <div>Header</div>
+  )
+}
+
+export default Header
+
+Footer.js:
+import React from 'react'
+const Footer = () => {
+  return (
+    <div>Footer</div>
+  )
+}
+
+export default Footer
+
+OUTPUT:
+
+ 
