@@ -1,0 +1,44 @@
+Sample.js
+import React,{useRef} from "react";
+const Sample=()=>{
+const usernameRef= useRef(null);
+const handleSubmit=(e) => {a. react-react folder is the read-only folder and has the project's test cases.
+
+b. reactapp-explore your code in this folder, you can use it for coding.
+
+Default settings mapped to run the frontend application in PORT-8081:
+
+The package.json file in reactapp folder is modified as: (Note -If not you can change it as below) "scripts": {
+
+"start": "PORT=8081 react-scripts start", "build":"react-scripts build", "test": "react-scripts test.
+e.preventDefault();
+    const username = usernameRef.current.value;
+    alert(username)
+}
+return (
+    <div>
+        <form onSubmit={handleSubmit}>
+         <input type="text" ref={usernameRef}></input>
+         <button>Submit</button>   
+        </form>
+    </div>
+)
+}
+export default Sample;
+
+App.js
+import React from "react";
+import Sample from "./Sample";
+function App()
+{
+  return(
+    <Sample/>
+  )
+}
+export default App
+
+
+
+Output:
+ 
+
